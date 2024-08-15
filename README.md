@@ -36,4 +36,3 @@ This repository contains scripts to support the publication: 'Deep Molecular Pat
 ## Data exploration website
 
 The supporting website is available at: [https://strap.hpc.qmul.ac.uk/](https://strap.hpc.qmul.ac.uk/)
-'
