@@ -14,7 +14,7 @@ This repository contains scripts to support the publication: 'Deep Molecular Pat
 ├── 5_
 ├── 6_
 ├── 7_
-└── 8_CDAI50_response_prediction
+└── 8_
     ├── 1_
     ├── 2_
     └── 3_
