@@ -36,3 +36,5 @@ This repository contains scripts to support the publication: 'Deep Molecular Pat
 ## Data exploration website
 
 The supporting website is available at: [https://strap.hpc.qmul.ac.uk/](https://strap.hpc.qmul.ac.uk/)
+
+Raw RNAseq files: [E-MTAB-13733](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-13733)
