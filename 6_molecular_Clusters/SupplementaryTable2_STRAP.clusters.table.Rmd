@@ -1,0 +1,58 @@
+---
+pdf_document: null
+geometry: "left=2cm,right=0.5cm,top=2cm,bottom=2cm"
+output: 
+  pdf_document:
+    latex_engine: xelatex  
+  df_print: kable
+
+header-includes:
+  \thispagestyle{empty}
+---
+  
+```{r setup, include=FALSE}
+library(kableExtra)
+library(arsenal)
+library(dplyr)
+```
+  
+```{r , echo = FALSE, warning = FALSE, results = "asis", out.width='100%'}
+metadata <- readRDS("../../Data/STRAP/STRAP.metadata_ML_230521_clusters.RDS") %>% #baseline only
+  filter(Week == 0)
+
+table.meta <- metadata[, c("cluster", "Age", "Gender", "CCP", "CRP", "ESR",
+                           "HAQ.Score",
+                           "Cell.type", "Serology", "RF_status", "CD138.lvl",
+                           "Pathotype", "DAS28.CRP.EULARresp.V7"
+                           )]
+
+table.meta$DAS28.CRP.EULARresp.V7 <- gsub("\\.", " ", table.meta$DAS28.CRP.EULARresp.V7)
+table.meta$Cell.type <- gsub("Bpoor", "B cell poor", table.meta$Cell.type)
+table.meta$Cell.type <- gsub("Brich", "B cell rich", table.meta$Cell.type)
+table.meta$CD138.lvl <- gsub("CDhigh", "high", table.meta$CD138.lvl)
+table.meta$CD138.lvl <- gsub("CDlow", "low", table.meta$CD138.lvl)
+
+labels(table.meta)  <- c(Age = 'Age (years)', RF_status = "RF",
+                       ESR = "ESR (mm/hr)", CRP = "CRP (ug/mL)",
+                       CCP = "CCP titre",
+                       HAQ.Score = "HAQ Score",
+                       Cell.type = "Cell type",
+                       CD138.lvl = "CD138 level",
+                       DAS28.CRP.EULARresp.V7 = "DAS28 EULAR"
+                       )
+
+table <- tableby(cluster ~ ., data = table.meta, 
+                 control = tableby.control(numeric.simplify = TRUE,
+                                           digits = 1,
+                                           numeric.stats = "meansd",
+                                           cat.stats = "countpct",
+                                           cat.test = "fe",
+                                           format.p = FALSE, 
+                                           digits.p = 2))  
+
+table <- summary(table)
+table
+```
+
+
+
