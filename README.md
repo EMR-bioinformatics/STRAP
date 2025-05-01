@@ -1,6 +1,6 @@
 # STRAP Molecular Analysis
 
-This repository contains scripts to support the publication: 'Deep Molecular Pathology Profiling of Synovial Tissue Biopsies in the R4RA Randomised Clinical Trial Identifies Predictive Signatures of Response/Resistance to Biologic Therapies in Rheumatoid Arthritis'
+This repository contains scripts to support the publication: 'Deep molecular profiling of synovial biopsies in the STRAP trial identifies signatures predictive of treatment response to biologic therapies in Rheumatoid Arthritis'
 
 
 ## Repository Structure
