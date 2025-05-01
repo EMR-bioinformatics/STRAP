@@ -11,3 +11,5 @@
 **clinical_models.R** is used to generate models using clinical parameters alone
 
 **pooled_models.R** is used to generate models using pooled STRAP and R4RA data
+
+**create_pseudoRNAseq_coefficients_merged_github.R** is used to calculate predefined linear regression components (intercept and slope coefficient)for each gene. Using these models, nCounter assay data was converted to RNA-Seq scale (referred to as pseudo-RNA-Seq) based on stored regression models for each gene.
